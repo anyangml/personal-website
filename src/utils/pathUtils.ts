@@ -10,7 +10,9 @@
  */
 export const getPublicPath = (): string => {
     const isGitHubPages = window.location.hostname.includes('github.io');
-    return isGitHubPages ? '/personal-website' : '';
+    // Also support local testing at /personal-website
+    const isLocalPersonalWebsite = window.location.pathname.startsWith('/personal-website');
+    return isGitHubPages || isLocalPersonalWebsite ? '/personal-website' : '';
 };
 
 /**
