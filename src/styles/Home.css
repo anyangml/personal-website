@@ -1,0 +1,31 @@
+.home-section {
+  padding-top: 20px;
+}
+
+.company-logo, .university-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.location {
+  color: #888;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+.publications-container {
+  max-height: 320px;  /* Height to display approximately 3 publication entries */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  padding-right: 8px; /* Leave some space for the scrollbar */
+}
+
+.publications-container::-webkit-scrollbar {
+  width: 6px;  /* Scrollbar width */
+}
+
+.publications-container::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;  /* Scrollbar color, matching Ant Design style */
+  border-radius: 3px;  /* Rounded scrollbar */
+} 
