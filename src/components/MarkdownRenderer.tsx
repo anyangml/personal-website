@@ -6,6 +6,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { Spin } from 'antd';
+import { getResourcePath } from '../utils/pathUtils';
 
 interface MarkdownRendererProps {
   content?: string;
@@ -28,7 +29,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, filePath }
     // If a file path is provided, load content from the file
     if (filePath) {
       setLoading(true);
-      fetch(filePath)
+      const resourcePath = getResourcePath(filePath);
+      fetch(resourcePath)
         .then((response) => {
           if (!response.ok) {
             throw new Error(`Failed to load Markdown file: ${response.statusText}`);

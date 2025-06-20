@@ -1,7 +1,9 @@
+import { getResourcePath } from '../utils/pathUtils';
+
 export const profileData = {
   name: 'Anyang Peng',
   title: 'ML Research Scientist @ AISI',
-  imageUrl: '/static/images/profile.png',
+  imageUrl: getResourcePath('/static/images/profile.png'),
   bio: `TO BE UPDATED.`,
   socialLinks: {
     googleScholar: 'https://scholar.google.com/citations?user=pDRtjREAAAAJ&hl=en&oi=ao',

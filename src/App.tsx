@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { Layout, Tabs } from 'antd';
+import { getPublicPath } from './utils/pathUtils';
 import About from './sections/About';
 import Home from './sections/Home';
 import Projects from './sections/Projects';
@@ -90,8 +91,7 @@ const MainLayoutWrapper: React.FC = () => {
 };
 
 const App: React.FC = () => {
-  const isGitHubPages = window.location.hostname.includes('github.io');
-  const basename = isGitHubPages ? '/personal-website' : '';
+  const basename = getPublicPath();
   
   return (
     <Router basename={basename}>

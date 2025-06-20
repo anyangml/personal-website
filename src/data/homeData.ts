@@ -1,3 +1,5 @@
+import { getResourcePath } from '../utils/pathUtils';
+
 export const homeData = {
   news: [
     {
@@ -11,21 +13,21 @@ export const homeData = {
       company: 'AI for Science Institute',
       duration: 'Jan 2024 - Present',
       location: 'Beijing, China',
-      logo: '/static/images/logos/aisi_logo.png',
+      logo: getResourcePath('/static/images/logos/aisi_logo.png'),
     },
     {
       role: 'Data Scientist',
       company: 'Validere',
       duration: 'Nov 2022 - Oct 2023',
       location: 'Toronto, Canada',
-      logo: '/static/images/logos/validere_logo.png',
+      logo: getResourcePath('/static/images/logos/validere_logo.png'),
     },
     {
       role: 'Research Associate',
       company: 'Northwestern University',
       duration: 'Feb 2020 - Nov 2022',
       location: 'Evanston, IL, USA',
-      logo: '/static/images/logos/northwestern_logo.svg',
+      logo: getResourcePath('/static/images/logos/northwestern_logo.svg'),
     },
   ],
   education: [
@@ -34,14 +36,14 @@ export const homeData = {
       university: 'Northwestern University',
       duration: '2014 - 2019',
       location: 'Evanston, IL, USA',
-      logo: '/static/images/logos/northwestern_logo.svg',
+      logo: getResourcePath('/static/images/logos/northwestern_logo.svg'),
     },
     {
       degree: 'B.Sc. in Chemistry (Honors | Highest Distinction)',
       university: 'Purdue University - West Lafayette',
       duration: '2012 - 2014',
       location: 'West Lafayette, IN, USA',
-      logo: '/static/images/logos/purdue_logo.svg',
+      logo: getResourcePath('/static/images/logos/purdue_logo.svg'),
     },
   ],
   publications: [
