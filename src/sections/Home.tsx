@@ -11,13 +11,16 @@ const Home: React.FC = () => {
       <Row gutter={[16, 16]}>
         <Col span={24}>
           <Card title={<Title level={4}>News</Title>}>
-            <Timeline>
-              {homeData.news.map((item, index) => (
-                <Timeline.Item key={index}>
-                  <Text strong>{item.date}:</Text> {item.content}
-                </Timeline.Item>
-              ))}
-            </Timeline>
+            <Timeline 
+              items={homeData.news.map((item, index) => ({
+                key: index,
+                children: (
+                  <>
+                    <Text strong>{item.date}:</Text> {item.content}
+                  </>
+                )
+              }))}
+            />
           </Card>
         </Col>
         <Col md={12} sm={24}>

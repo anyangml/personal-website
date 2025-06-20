@@ -9,7 +9,6 @@ import ProjectPage from './sections/ProjectPage';
 import './styles/App.css';
 
 const { Content } = Layout;
-const { TabPane } = Tabs;
 
 interface MainLayoutProps {
   defaultTab?: string;
@@ -41,22 +40,30 @@ const MainLayout: React.FC<MainLayoutProps> = ({ defaultTab = "1" }) => {
     }
   };
 
+  const tabItems = [
+    {
+      key: "1",
+      label: "Home",
+      children: <Home />
+    },
+    {
+      key: "2",
+      label: "Projects",
+      children: <Projects />
+    },
+    {
+      key: "3",
+      label: "Blog",
+      children: <Blog />
+    }
+  ];
+
   return (
     <Layout className="layout">
       <Content style={{ padding: '0 50px', marginTop: '64px' }}>
         <div className="site-layout-content">
           <About />
-          <Tabs activeKey={activeKey} onChange={handleTabChange} centered>
-            <TabPane tab="Home" key="1">
-              <Home />
-            </TabPane>
-            <TabPane tab="Projects" key="2">
-              <Projects />
-            </TabPane>
-            <TabPane tab="Blog" key="3">
-              <Blog />
-            </TabPane>
-          </Tabs>
+          <Tabs activeKey={activeKey} onChange={handleTabChange} centered items={tabItems} />
         </div>
       </Content>
     </Layout>
@@ -83,8 +90,11 @@ const MainLayoutWrapper: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const basename = isGitHubPages ? '/personal-website' : '';
+  
   return (
-    <Router basename="/personal-website">
+    <Router basename={basename}>
       <Routes>
         <Route path="/" element={<MainLayoutWrapper />} />
         <Route path="/project/:id" element={<ProjectPage />} />
