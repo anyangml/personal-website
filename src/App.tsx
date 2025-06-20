@@ -84,7 +84,7 @@ const MainLayoutWrapper: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/personal-website">
       <Routes>
         <Route path="/" element={<MainLayoutWrapper />} />
         <Route path="/project/:id" element={<ProjectPage />} />
