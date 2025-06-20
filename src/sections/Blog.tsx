@@ -1,9 +1,9 @@
 import React from 'react';
-import { Typography, Card, List } from 'antd';
+import { Typography, List } from 'antd';
 import { blogData } from '../data/blogData';
 import '../styles/Blog.css';
 
-const { Title, Text, Paragraph } = Typography;
+const { Text, Paragraph } = Typography;
 
 const Blog: React.FC = () => {
   return (

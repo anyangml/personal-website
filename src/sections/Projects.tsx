@@ -4,7 +4,7 @@ import { Typography, Card, List, Button, Space, Divider, Tag } from 'antd';
 import { projectsData, Project } from '../data/projectsData';
 import '../styles/Projects.css';
 
-const { Title, Text, Paragraph } = Typography;
+const { Title, Paragraph } = Typography;
 
 const Projects: React.FC = () => {
   const groupedByYear = projectsData.reduce((acc, project) => {

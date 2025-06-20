@@ -1,7 +1,3 @@
-import { link } from "fs";
-import { title } from "process";
-import { data } from "react-router-dom";
-
 export const homeData = {
   news: [
     {
