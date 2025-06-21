@@ -3,25 +3,23 @@ import { getResourcePath } from '../utils/pathUtils';
 export const homeData = {
   news: [
     {
-      date: 'May 2024',
-      content: 'TO BE UPDATED.',
-      image: getResourcePath('/static/images/news/example.jpg'), // Optional image
+      date: 'Jun 2025',
+      content: `We've released the latest version of DPA-3, an advanced interatomic potential built on a message passing architecture. As a large atomistic model (LAM), DPA-3 is designed to integrate and train on datasets spanning multiple scientific disciplines, capturing a wide range of chemical and materials systems. DPA-3 placed second in the <a href="https://matbench-discovery.materialsproject.org/" target="_blank" rel="noopener noreferrer">Matbench Discovery Challenge</a>, outperformed only by a significantly larger model developed by Meta. Details can be found in our <a href="https://arxiv.org/abs/2506.01686" target="_blank" rel="noopener noreferrer">preprint</a>.`,
+      image: getResourcePath('/static/images/news/DPA3-matbench.png'),
     },
     {
-      date: 'Feb 2024',
-      content: 'TO BE UPDATED.',
-      image: getResourcePath('/static/images/news/example.jpg'), // Optional image
+      date: 'May 2025',
+      content: `We’ve released LAMBench, a comprehensive, fully automated, and highly modular benchmark platform for evaluating large atomistic models. Details can be found in our <a href="https://arxiv.org/abs/2504.19578" target="_blank" rel="noopener noreferrer">preprint</a>.`,
+      image: getResourcePath('/static/images/news/LAMBench.png'),
     },
     {
-      date: 'Feb 2024',
-      content: 'TO BE UPDATED.',
-      image: getResourcePath('/static/images/news/example.jpg'), // Optional image
+      date: 'Jan 2025',
+      content: `The <a href="https://bohrium.dp.tech/competitions/8821838186?tab=introduce" target="_blank" rel="noopener noreferrer">OpenLAM Challenge: LAM Crystal Philately</a> competition has successfully concluded. We collected nearly 20 million crystal structures in our database, including approximately 350,000 on the OpenLAM convex hull—advancing the frontiers of generative modeling and materials science applications.`,
     },
     {
-      date: 'Feb 2024',
-      content: 'TO BE UPDATED.',
-      image: getResourcePath('/static/images/news/example.jpg'), // Optional image
-    },
+      date: 'Jan 2024',
+      content: `I've joined the <a href="https://www.aisi.ac.cn/#/" target="_blank" rel="noopener noreferrer">AI for Science Institute, Beijing</a> as a Machine Learning Research Scientist.`,
+    }
   ],
   experience: [
     {

@@ -17,7 +17,7 @@ const Home: React.FC = () => {
                 children: (
                   <div className="news-item">
                     <div className="news-content">
-                      <Text strong>{item.date}:</Text> {item.content}
+                      <Text strong>{item.date}:</Text> <span dangerouslySetInnerHTML={{ __html: item.content || '' }} />
                     </div>
                     {item.image && (
                       <div className="news-image">
