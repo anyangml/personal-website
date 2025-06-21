@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, Typography, Space, Divider } from 'antd';
-import { GoogleOutlined, GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
+import { GithubOutlined, LinkedinOutlined, MailOutlined } from '@ant-design/icons';
+import GoogleScholarIcon from '../components/GoogleScholarIcon';
 import { profileData } from '../data/profileData';
 import '../styles/About.css';
 
@@ -15,9 +16,10 @@ const About: React.FC = () => {
         <Text type="secondary">{profileData.title}</Text>
         <Divider />
         <Space size="middle">
-          <a href={profileData.socialLinks.googleScholar} target="_blank" rel="noopener noreferrer"><GoogleOutlined /></a>
+          <a href={profileData.socialLinks.googleScholar} target="_blank" rel="noopener noreferrer"><GoogleScholarIcon /></a>
           <a href={profileData.socialLinks.github} target="_blank" rel="noopener noreferrer"><GithubOutlined /></a>
           <a href={profileData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer"><LinkedinOutlined /></a>
+          <a href={`mailto:${profileData.socialLinks.email}`}><MailOutlined /></a>
         </Space>
       </div>
       <div className="about-right">

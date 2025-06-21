@@ -9,5 +9,6 @@ export const profileData = {
     googleScholar: 'https://scholar.google.com/citations?user=pDRtjREAAAAJ&hl=en&oi=ao',
     github: 'https://github.com/anyangml',
     linkedin: 'https://www.linkedin.com/in/anyangpeng/',
+    email: 'anyangpeng.nu@gmail.com',
   },
 }; 
