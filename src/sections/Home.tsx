@@ -15,9 +15,20 @@ const Home: React.FC = () => {
               items={homeData.news.map((item, index) => ({
                 key: index,
                 children: (
-                  <>
-                    <Text strong>{item.date}:</Text> {item.content}
-                  </>
+                  <div className="news-item">
+                    <div className="news-content">
+                      <Text strong>{item.date}:</Text> {item.content}
+                    </div>
+                    {item.image && (
+                      <div className="news-image">
+                        <img 
+                          src={item.image} 
+                          alt={`News ${index + 1}`} 
+                          className="news-attached-image"
+                        />
+                      </div>
+                    )}
+                  </div>
                 )
               }))}
             />

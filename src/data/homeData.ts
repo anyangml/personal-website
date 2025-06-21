@@ -3,8 +3,24 @@ import { getResourcePath } from '../utils/pathUtils';
 export const homeData = {
   news: [
     {
-      date: 'Jan 2024',
+      date: 'May 2024',
       content: 'TO BE UPDATED.',
+      image: getResourcePath('/static/images/news/example.jpg'), // Optional image
+    },
+    {
+      date: 'Feb 2024',
+      content: 'TO BE UPDATED.',
+      image: getResourcePath('/static/images/news/example.jpg'), // Optional image
+    },
+    {
+      date: 'Feb 2024',
+      content: 'TO BE UPDATED.',
+      image: getResourcePath('/static/images/news/example.jpg'), // Optional image
+    },
+    {
+      date: 'Feb 2024',
+      content: 'TO BE UPDATED.',
+      image: getResourcePath('/static/images/news/example.jpg'), // Optional image
     },
   ],
   experience: [

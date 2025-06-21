@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { Layout, Tabs } from 'antd';
+import { HomeOutlined, AppstoreOutlined, BookOutlined } from '@ant-design/icons';
 import { getPublicPath } from './utils/pathUtils';
 import About from './sections/About';
 import Home from './sections/Home';
 import Projects from './sections/Projects';
 import Blog from './sections/Blog';
 import ProjectPage from './sections/ProjectPage';
+import GeometricBackground from './components/GeometricBackground';
 import './styles/App.css';
 
 const { Content } = Layout;
@@ -44,30 +46,39 @@ const MainLayout: React.FC<MainLayoutProps> = ({ defaultTab = "1" }) => {
   const tabItems = [
     {
       key: "1",
-      label: "Home",
+      label: <span><HomeOutlined style={{ marginRight: 8 }} />Home</span>,
       children: <Home />
     },
     {
       key: "2",
-      label: "Projects",
+      label: <span><AppstoreOutlined style={{ marginRight: 8 }} />Projects</span>,
       children: <Projects />
     },
     {
       key: "3",
-      label: "Blog",
+      label: <span><BookOutlined style={{ marginRight: 8 }} />Blog</span>,
       children: <Blog />
     }
   ];
 
   return (
-    <Layout className="layout">
-      <Content style={{ padding: '0 50px', marginTop: '64px' }}>
-        <div className="site-layout-content">
-          <About />
-          <Tabs activeKey={activeKey} onChange={handleTabChange} centered items={tabItems} />
-        </div>
-      </Content>
-    </Layout>
+    <div className="app-container">
+      {/* Layer 1: Black Background */}
+      <div className="black-background-layer"></div>
+      
+      {/* Layer 2: Geometric Background */}
+      <GeometricBackground />
+      
+      {/* Layer 3: Content */}
+      <Layout className="content-layer">
+        <Content style={{ padding: '0 50px', marginTop: '64px' }}>
+          <div className="site-layout-content">
+            <About />
+            <Tabs activeKey={activeKey} onChange={handleTabChange} centered items={tabItems} />
+          </div>
+        </Content>
+      </Layout>
+    </div>
   );
 };
 

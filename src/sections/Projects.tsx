@@ -39,14 +39,14 @@ const Projects: React.FC = () => {
                     {project.technologies && (
                       <div className="project-tech-tags">
                         {project.technologies.map((tech, index) => (
-                          <Tag key={index} color="blue">{tech}</Tag>
+                          <Tag key={index} color="gold">{tech}</Tag>
                         ))}
                       </div>
                     )}
                     
                     <Space style={{ marginTop: '15px' }}>
                       <Link to={projectUrl}>
-                        <Button type="primary">View Details</Button>
+                        <Button type="primary" className="gold-button">View Details</Button>
                       </Link>
                     </Space>
                   </Card>

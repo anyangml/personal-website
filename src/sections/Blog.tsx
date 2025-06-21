@@ -16,11 +16,11 @@ const Blog: React.FC = () => {
           <List.Item
             key={post.title}
             actions={[
-              <a href={post.link}>Read more</a>,
+              <a href={post.link} className="gold-link">Read more</a>,
             ]}
           >
             <List.Item.Meta
-              title={<a href={post.link}>{post.title}</a>}
+              title={<a href={post.link} className="gold-link">{post.title}</a>}
               description={<Text type="secondary">{post.date}</Text>}
             />
             <Paragraph>
