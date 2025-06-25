@@ -100,4 +100,14 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
+}
+
+.project-association-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-left: 152px;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.12);
+  background: #fff;
 } 

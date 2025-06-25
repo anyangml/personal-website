@@ -13,6 +13,7 @@ export interface Project {
   methodsMarkdownPath?: string;
   resultsMarkdownPath?: string;
   conclusionMarkdownPath?: string;
+  associatedWith: string;
 }
 
 export const projectsData: Project[] = [
@@ -25,6 +26,7 @@ export const projectsData: Project[] = [
     methods: 'This section provides a detailed description of the methods and technologies used in the project. We employed the latest deep learning architectures and algorithms to solve this complex problem. By combining various techniques, we were able to efficiently process the data and generate high-quality results.',
     results: 'This section showcases the outcomes and results of the project. Our method performed exceptionally well in various benchmark tests, surpassing existing state-of-the-art techniques. Charts and data analysis demonstrate the effectiveness and robustness of our approach.',
     conclusion: 'This section summarizes the main findings and future directions of the project. Our research indicates that the proposed method performs well under various conditions. In the future, we plan to extend this work to apply it to wider domains.',
+    associatedWith: 'AI for Science Institute',
   },
   {
     title: 'Markdown Example Project',
@@ -33,6 +35,7 @@ export const projectsData: Project[] = [
     technologies: ['React', 'Markdown', 'LaTeX'],
     imageUrl: getResourcePath('/static/images/projects/markdown_example.png'),
     markdownPath: getResourcePath('/static/markdown/projects/markdown_example.md'),
+    associatedWith: 'Northwestern University',
   },
   {
     title: 'Segmented Markdown Example',
@@ -42,5 +45,6 @@ export const projectsData: Project[] = [
     methodsMarkdownPath: getResourcePath('/static/markdown/projects/methods_example.md'),
     resultsMarkdownPath: getResourcePath('/static/markdown/projects/results_example.md'),
     conclusionMarkdownPath: getResourcePath('/static/markdown/projects/conclusion_example.md'),
+    associatedWith: 'personal',
   }
 ]; 

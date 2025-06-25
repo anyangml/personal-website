@@ -2,9 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Typography, Card, List, Button, Space, Divider, Tag } from 'antd';
 import { projectsData, Project } from '../data/projectsData';
+import { homeData } from '../data/homeData';
+import { profileData } from '../data/profileData';
 import '../styles/Projects.css';
 
 const { Title, Paragraph } = Typography;
+
+const getProjectLogo = (project: Project): string | undefined => {
+  // Check work experience
+  const exp = homeData.experience.find(e => e.company === project.associatedWith);
+  if (exp) return exp.logo;
+  // Check education
+  const edu = homeData.education.find(e => e.university === project.associatedWith);
+  if (edu) return edu.logo;
+  // Personal
+  if (project.associatedWith === 'personal') return profileData.imageUrl;
+  return undefined;
+};
 
 const Projects: React.FC = () => {
   const groupedByYear = projectsData.reduce((acc, project) => {
@@ -28,6 +42,7 @@ const Projects: React.FC = () => {
             dataSource={groupedByYear[year]}
             renderItem={project => {
               const projectUrl = `/project/${project.title.replace(/\s+/g, '-').toLowerCase()}`;
+              const logo = getProjectLogo(project);
               return (
                 <List.Item>
                   <Card 
@@ -48,6 +63,9 @@ const Projects: React.FC = () => {
                       <Link to={projectUrl}>
                         <Button type="primary" className="gold-button">View Details</Button>
                       </Link>
+                      {logo && (
+                        <img src={logo} alt="association logo" className="project-association-logo" />
+                      )}
                     </Space>
                   </Card>
                 </List.Item>
