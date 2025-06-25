@@ -21,10 +21,13 @@ export const getPublicPath = (): string => {
  * @returns Resource path with public path prefix added
  */
 export const getResourcePath = (path: string): string => {
-    // If the path is empty or not a relative path starting with '/', return it directly
     if (!path || !path.startsWith('/')) {
         return path;
     }
-    
-    return `${getPublicPath()}${path}`;
+    const prefix = getPublicPath();
+    // Avoid double prefix
+    if (prefix && path.startsWith(prefix + '/')) {
+        return path;
+    }
+    return `${prefix}${path}`;
 };
