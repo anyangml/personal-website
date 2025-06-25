@@ -58,6 +58,16 @@
 /* Enhanced tab styling */
 .ant-tabs-nav {
   margin-bottom: 32px;
+  padding-left: 12px;
+  padding-right: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ant-tabs-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .ant-tabs-tab {
@@ -73,6 +83,8 @@
   margin-right: 8px !important;
   position: relative;
   z-index: 1;
+  min-width: 90px;
+  box-sizing: border-box;
 }
 
 .ant-tabs-tab .anticon {
@@ -169,16 +181,24 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .content-layer .ant-layout-content {
-    padding: 0 15px;
+    padding: 0 0px;
     margin-top: 40px;
   }
-
   .site-layout-content {
-    padding: 15px;
+    padding: 8px 0;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+  }
+  .ant-tabs-nav {
+    padding-left: 12px;
+    padding-right: 12px;
   }
   .ant-tabs-tab {
     font-size: 16px;
-    padding: 8px 12px 8px 12px;
+    padding: 8px 18px 8px 18px;
   }
 }
 

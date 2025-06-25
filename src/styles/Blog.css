@@ -50,4 +50,11 @@
 .ant-typography {
   color: #444;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .blog-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 } 

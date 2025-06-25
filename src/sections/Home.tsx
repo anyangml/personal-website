@@ -41,16 +41,16 @@ const Home: React.FC = () => {
               dataSource={homeData.experience}
               renderItem={item => (
                 <List.Item>
-                  <List.Item.Meta
-                    avatar={item.logo && <img src={item.logo} alt={item.company} className="company-logo" />}
-                    title={<Text strong>{item.role}</Text>}
-                    description={
-                      <>
-                        <div>{item.company} | {item.duration}</div>
-                        <div className="location">{item.location}</div>
-                      </>
-                    }
-                  />
+                  <div style={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}>
+                    {item.logo && (
+                      <img src={item.logo} alt={item.company} className="company-logo" style={{ marginRight: 16 }} />
+                    )}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <Text strong>{item.role}</Text>
+                      <div>{item.company} | {item.duration}</div>
+                      <div className="location">{item.location}</div>
+                    </div>
+                  </div>
                 </List.Item>
               )}
             />
@@ -63,16 +63,16 @@ const Home: React.FC = () => {
               dataSource={homeData.education}
               renderItem={item => (
                 <List.Item>
-                  <List.Item.Meta
-                    avatar={item.logo && <img src={item.logo} alt={item.university} className="university-logo" />}
-                    title={<Text strong>{item.degree}</Text>}
-                    description={
-                      <>
-                        <div>{item.university} | {item.duration}</div>
-                        <div className="location">{item.location}</div>
-                      </>
-                    }
-                  />
+                  <div style={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}>
+                    {item.logo && (
+                      <img src={item.logo} alt={item.university} className="university-logo" style={{ marginRight: 16 }} />
+                    )}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <Text strong>{item.degree}</Text>
+                      <div>{item.university} | {item.duration}</div>
+                      <div className="location">{item.location}</div>
+                    </div>
+                  </div>
                 </List.Item>
               )}
             />

@@ -110,4 +110,22 @@
   margin-left: 152px;
   box-shadow: 0 2px 8px rgba(212, 175, 55, 0.12);
   background: #fff;
+}
+
+@media (max-width: 768px) {
+  .ant-card-body .ant-space {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center !important;
+    gap: 10px;
+  }
+  .project-association-logo {
+    margin-left: 0 !important;
+    margin-top: 0;
+    margin-right: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
 } 

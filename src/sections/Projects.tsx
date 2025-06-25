@@ -46,10 +46,10 @@ const Projects: React.FC = () => {
               return (
                 <List.Item>
                   <Card 
-                    title={<Link to={projectUrl}>{project.title}</Link>}
+                    title={<Link to={projectUrl} style={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>{project.title}</Link>}
                     cover={project.imageUrl && <img alt={project.title} src={project.imageUrl} className="project-image" />}
                   >
-                    <Paragraph ellipsis={{ rows: 3, expandable: true }}>{project.description}</Paragraph>
+                    <Paragraph>{project.description}</Paragraph>
                     
                     {project.technologies && (
                       <div className="project-tech-tags">

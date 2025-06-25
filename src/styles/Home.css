@@ -115,4 +115,46 @@
   color: #ffd700;
   background: rgba(212, 175, 55, 0.1);
   transform: translateX(2px);
+}
+
+/* Responsive design for Experience and Education sections */
+@media (max-width: 768px) {
+  .ant-card {
+    margin-bottom: 16px;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+  .ant-list-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 12px 0 !important;
+    width: 100% !important;
+  }
+  .ant-list-item-meta {
+    width: 100%;
+    min-width: 0;
+  }
+  .ant-list-item-meta-title {
+    font-size: 1.05em !important;
+    margin-bottom: 4px;
+    word-break: break-word;
+    white-space: normal !important;
+  }
+  .ant-list-item-meta-description {
+    font-size: 0.98em !important;
+    line-height: 1.5;
+    word-break: break-word;
+    white-space: normal !important;
+  }
+  .company-logo, .university-logo {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+  }
+  .location {
+    font-size: 0.95em;
+    margin-top: 2px;
+  }
 } 
