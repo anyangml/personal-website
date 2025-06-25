@@ -101,13 +101,13 @@
 @media (max-width: 768px) {
   .about-section {
     flex-direction: column;
-    text-align: center;
     padding: 24px;
+    text-align: center;
   }
-  
+
   .about-left {
     margin-right: 0;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
   }
   
   .about-left .ant-avatar {

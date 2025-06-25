@@ -134,4 +134,15 @@
 
 .ant-typography h3 {
   margin-top: 32px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .project-back-button {
+    margin-bottom: 15px;
+  }
+
+  .project-featured-image {
+    margin-bottom: 20px;
+  }
 } 
