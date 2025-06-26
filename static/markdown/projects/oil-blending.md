@@ -5,12 +5,15 @@ Crude oil is a complex mix of hydrocarbons, with its exact composition varying b
 This work compares a data-driven machine learning approach with a rule-based approach derived from physical laws. Both models predict the mass-fraction distillation profile of oil blends, using the blend ratio and the individual crude distillation profiles as inputs.
 
 <div style="text-align: center;">
-  <img width="593" alt="Image" src="https://github.com/user-attachments/assets/c2f2890d-c378-4b6d-8d9b-e321da9f3dce" />
+  <img width="593" alt="Image" src="{{PUBLIC_URL}}/static/images/projects/oil-blending/figure1.jpg" />
+  <em>Figure 1: Problem definition and example distillation profile.</em>
 </div>
 
 ## Methods
 
 ### A. Physics-Based Modeling
+Distillation is the process to separate chemicals based on the difference between their boiling points. And to understand the distillation process, we would need to first understand the boiling process. 
+
 
 ### B. Data-Driven Modeling
 
