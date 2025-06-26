@@ -33,7 +33,7 @@ export const projectsData: Project[] = [
     description: 'The accurate prediction of distillation profiles of crude oil blends is crucial for refining operations. This project compares the performance of data-driven and physics-driven oil-bending models, providing insights into the strengths and limitations of each approach.',
     year: 2022,
     technologies: ['Web Scraping', 'Neural Network', 'Physical Chemistry'],
-    imageUrl: getResourcePath('/static/images/projects/oil-blending.png'),
+    imageUrl: getResourcePath('/static/images/projects/oil-blending/cover.jpg'),
     markdownPath: getResourcePath('/static/markdown/projects/oil-blending.md'),
     associatedWith: 'Validere',
   },

@@ -6,7 +6,6 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { Spin } from 'antd';
-import { getResourcePath } from '../utils/pathUtils';
 
 interface MarkdownRendererProps {
   content?: string;
@@ -15,38 +14,35 @@ interface MarkdownRendererProps {
 
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, filePath }) => {
   const [markdown, setMarkdown] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(!!filePath);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // If content is directly provided, use it
-    if (content) {
-      setMarkdown(content);
-      setLoading(false);
-      return;
-    }
-
-    // If a file path is provided, load content from the file
-    if (filePath) {
-      setLoading(true);
-      const resourcePath = getResourcePath(filePath);
-      fetch(resourcePath)
-        .then((response) => {
+    const fetchMarkdown = async () => {
+      try {
+        if (filePath) {
+          const response = await fetch(filePath);
           if (!response.ok) {
             throw new Error(`Failed to load Markdown file: ${response.statusText}`);
           }
-          return response.text();
-        })
-        .then((text) => {
+          let text = await response.text();
+          // Replace placeholder with the actual public URL
+          text = text.replace(/{{PUBLIC_URL}}/g, process.env.PUBLIC_URL || '');
           setMarkdown(text);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.error('Error loading Markdown file:', err);
-          setError(`Unable to load Markdown content: ${err.message}`);
-          setLoading(false);
-        });
-    }
+        } else if (content) {
+          // Also process content passed directly as a prop
+          const processedContent = content.replace(/{{PUBLIC_URL}}/g, process.env.PUBLIC_URL || '');
+          setMarkdown(processedContent);
+        }
+        setLoading(false);
+      } catch (err: any) {
+        console.error('Error loading Markdown file:', err);
+        setError(`Unable to load Markdown content: ${err.message}`);
+        setLoading(false);
+      }
+    };
+
+    fetchMarkdown();
   }, [content, filePath]);
 
   if (loading) {
