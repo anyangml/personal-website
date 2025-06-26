@@ -58,13 +58,16 @@ const Home: React.FC = () => {
                       <Text strong>{item.role}</Text>
                       <div>{item.company} | {item.duration}</div>
                       <div className="location">{item.location}</div>
-                      {expanded === index && item.details && (
-                        <ul style={{ marginTop: 8 }}>
-                          {item.details.map((point: string, i: number) => (
-                            <li key={i}>{point}</li>
-                          ))}
-                        </ul>
-                      )}
+                      <div className={"exp-summary-wrapper" + (expanded === index ? " expanded" : "")}
+                           style={{ overflow: 'hidden', transition: 'max-height 0.4s cubic-bezier(0.4,0,0.2,1)', maxHeight: expanded === index ? 500 : 0 }}>
+                        {item.details && (
+                          <ul className={expanded === index ? 'exp-summary-list expanded' : 'exp-summary-list'} style={{ marginTop: 8 }}>
+                            {item.details.map((point: string, i: number) => (
+                              <li key={i}>{point}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </List.Item>

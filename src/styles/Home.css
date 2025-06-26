@@ -157,4 +157,34 @@
     font-size: 0.95em;
     margin-top: 2px;
   }
+}
+
+.exp-summary-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  max-height: 0;
+  margin-top: 0;
+}
+.exp-summary-wrapper.expanded {
+  max-height: 500px; /* Should be enough for most summaries */
+  margin-top: 8px;
+}
+
+.exp-summary-list {
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+  height: auto;
+}
+.exp-summary-list.expanded {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.home-section .ant-list-item:hover {
+  background: rgba(212, 175, 55, 0.04);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.18);
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 } 
