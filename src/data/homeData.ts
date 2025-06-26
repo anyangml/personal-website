@@ -9,7 +9,7 @@ export const homeData = {
     },
     {
       date: 'May 2025',
-      content: `We’ve released LAMBench, a comprehensive, fully automated, and highly modular benchmark platform for evaluating large atomistic models. Details can be found in our <a href="https://arxiv.org/abs/2504.19578" target="_blank" rel="noopener noreferrer">preprint</a>.`,
+      content: `We've released LAMBench, a comprehensive, fully automated, and highly modular benchmark platform for evaluating large atomistic models. Details can be found in our <a href="https://arxiv.org/abs/2504.19578" target="_blank" rel="noopener noreferrer">preprint</a>.`,
       image: getResourcePath('/static/images/news/LAMBench.png'),
     },
     {
@@ -28,6 +28,12 @@ export const homeData = {
       duration: 'Jan 2024 - Present',
       location: 'Beijing, China',
       logo: getResourcePath('/static/images/logos/aisi_logo.png'),
+      details: [
+        'Developed and maintained open-source deep learning frameworks for interatomic potentials with multi-backend support, broadening adoption and accessibility.',
+        'Built automated MLOps pipelines for large-scale training and evaluation, maximizing GPU cluster utilization and throughput.',
+        'Trained foundation models on 200M+ materials, molecules, and proteins, surpassing benchmarks from Microsoft and DeepMind.',
+        'Led a team to build a data pipeline that collected 20M+ crystal structures through competitions, accelerating materials discovery.'
+      ],
     },
     {
       role: 'Data Scientist',
@@ -35,6 +41,12 @@ export const homeData = {
       duration: 'Nov 2022 - Oct 2023',
       location: 'Toronto, Canada',
       logo: getResourcePath('/static/images/logos/validere_logo.png'),
+      details: [
+        'Spearheaded the design, implementation, and maintenance of generative ML models and computer vision algorithms to convert unstructured data into structured formats.',
+        'Engineered software solutions that streamlined the development of emission calculator services, cutting product release timelines significantly.',
+        'Developed and operationalized ML workflows combining probabilistic modeling with emissions data integration, driving higher accuracy in carbon accounting.',
+        'Delivered and fine-tuned probabilistic models for oil industry clients, enabling data-driven optimization of blending operations.'
+      ],
     },
     {
       role: 'Research Associate',
@@ -42,6 +54,11 @@ export const homeData = {
       duration: 'Feb 2020 - Nov 2022',
       location: 'Evanston, IL, USA',
       logo: getResourcePath('/static/images/logos/northwestern_logo.svg'),
+      details: [
+        'Conducted first-principles simulations using spin-polarized DFT+U to quantify CO₂ adsorption energies across diverse metal oxide solid solutions.',
+        'Designed and validated regression models to reveal relationships between metal oxide basicity and key chemical properties.',
+        'Disseminated research outcomes through peer-reviewed publications in distinguished academic journals.'
+      ],
     },
   ],
   education: [

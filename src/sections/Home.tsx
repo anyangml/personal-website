@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, Row, Col, Card, List, Timeline } from 'antd';
 import { homeData } from '../data/homeData';
 import '../styles/Home.css';
@@ -6,6 +6,12 @@ import '../styles/Home.css';
 const { Title, Text } = Typography;
 
 const Home: React.FC = () => {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setExpanded(expanded === index ? null : index);
+  };
+
   return (
     <div className="home-section">
       <Row gutter={[16, 16]}>
@@ -39,8 +45,11 @@ const Home: React.FC = () => {
             <List
               itemLayout="horizontal"
               dataSource={homeData.experience}
-              renderItem={item => (
-                <List.Item>
+              renderItem={(item, index) => (
+                <List.Item
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => handleToggle(index)}
+                >
                   <div style={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}>
                     {item.logo && (
                       <img src={item.logo} alt={item.company} className="company-logo" style={{ marginRight: 16 }} />
@@ -49,6 +58,13 @@ const Home: React.FC = () => {
                       <Text strong>{item.role}</Text>
                       <div>{item.company} | {item.duration}</div>
                       <div className="location">{item.location}</div>
+                      {expanded === index && item.details && (
+                        <ul style={{ marginTop: 8 }}>
+                          {item.details.map((point: string, i: number) => (
+                            <li key={i}>{point}</li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 </List.Item>
