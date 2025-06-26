@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Typography, Layout, Divider, Tag, Image, Button } from 'antd';
+import { Typography, Layout, Divider, Tag, Button } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { projectsData } from '../data/projectsData';
 import MarkdownRenderer from '../components/MarkdownRenderer';
@@ -45,29 +45,36 @@ const ProjectPage: React.FC = () => {
                 Back to Projects
               </Button>
             </div>
-            <Title>{project.title}</Title>
-            {project.imageUrl && (
-              <div className="project-featured-image">
-                <Image 
-                  src={project.imageUrl} 
-                  alt={project.title} 
-                  style={{ maxWidth: '100%', maxHeight: '400px', objectFit: 'contain' }}
-                />
+            <div className="project-header-background" style={{
+              backgroundImage: project.imageUrl ? `url(${project.imageUrl})` : undefined,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              position: 'relative',
+              minHeight: '220px',
+              borderRadius: '16px',
+              marginBottom: '32px',
+              overflow: 'hidden',
+            }}>
+              <div className="project-header-overlay">
+                <Title style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.45)', margin: 0 }}>{project.title}</Title>
+                <div className="project-tech-tags">
+                  {project.technologies?.map((tech, index) => (
+                    <Tag key={index} color="gold">{tech}</Tag>
+                  ))}
+                </div>
               </div>
-            )}
-            
-            <div className="project-tech-tags">
-              {project.technologies?.map((tech, index) => (
-                <Tag key={index} color="blue">{tech}</Tag>
-              ))}
             </div>
             
             <Divider />
-            
-            <Title level={3}>Project Overview</Title>
-            <Paragraph>
-              {project.description}
-            </Paragraph>
+            {!project.markdownPath && (
+              <>
+                <Title level={3}>Project Overview</Title>
+                <Paragraph>
+                  {project.description}
+                </Paragraph>
+              </>
+            )}
             
             {/* If a complete Markdown file path is available, render the entire Markdown */}
             {project.markdownPath ? (

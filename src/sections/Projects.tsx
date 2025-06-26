@@ -47,7 +47,11 @@ const Projects: React.FC = () => {
                 <List.Item>
                   <Card 
                     title={<Link to={projectUrl} style={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>{project.title}</Link>}
-                    cover={project.imageUrl && <img alt={project.title} src={project.imageUrl} className="project-image" />}
+                    cover={project.imageUrl && (
+                      <div className="project-image-container">
+                        <img alt={project.title} src={project.imageUrl} className="project-image" />
+                      </div>
+                    )}
                   >
                     <Paragraph>{project.description}</Paragraph>
                     
