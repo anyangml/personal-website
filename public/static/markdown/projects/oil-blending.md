@@ -52,6 +52,36 @@ Without further ado, let's explore how to use machine learning to tackle this pr
   </span>
 </p>
 
+Our analysis leverages tabelized data from the PDF, detailing crude oil composition (6 components) and their corresponding distillation profiles (represented by 22 mass fractions). This rich dataset enables the training of two distinct models. First, a reverse model takes distillation profile data as input to predict the crude oil's composition. Second, a forward model uses the crude composition to forecast its distillation behavior. Figure 4 visually depicts this dual modeling approach.
+
+<p align="center">
+  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+    <img src="{{PUBLIC_URL}}/static/images/projects/oil-blending/figure5a.jpg" width="293">
+    <br>
+    <em>Figure 5A: Reverse Model Results. Each color on the plot represents the mass fraction of a distinct crude oil component.</em>
+  </span>
+  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+    <img src="{{PUBLIC_URL}}/static/images/projects/oil-blending/figure5b.jpg" width="293">
+    <br>
+    <em>Figure 5B: Reverse Model Results. Each color on the plot represents the boiling temperature at a given mass fraction.</em>
+  </span>
+</p>
+
+A comparative analysis was conducted using 500 samples to train a LASSO model and a 3-layer neural network. In the context of the reverse model, which involves mapping an input tensor of dimensions (500, 22) to an output tensor of dimensions (500, 6), both methodologies demonstrated effective performance. However, the neural network exhibited a marginal improvement in linearity as evidenced by the parity plot (Figure. 5A). During the training of the forward model, we capped the temperature at 2000˚C to manage non-volatile residuals. In this case, the neural network outperformed the LASSO model, a result attributed to the inherent non-linearity present in the data (Figure. 5B).
+
+Consequently, we are able to predict the distillation profile of any given mixture of crudes.
+
 ## Conclusion
 
+<div style="text-align: center;">
+  <img width="293" alt="Image" src="{{PUBLIC_URL}}/static/images/projects/oil-blending/figure6.jpg" />
+  <em>Figure 6: Comparative Analysis of Data-Driven and Physics-Based Models for Distillation Profile Prediction.</em>
+</div>
+
+It makes sense that the data-driven method outperformed the overly-simplified, rule-based approach in predicting the distillation profile. This is particularly evident in the sigmoidal shape of the predicted profile, as the data-driven method could leverage extra information to extract physically meaningful insights into the compositional latent space.
+
+The customer can use this tool to optimize their blending process and maximize profit margins.
+
 ## References
+
+1. Lower, S. (2023, October 10). 8.9: Distillation. Chemistry LibreTexts. 
