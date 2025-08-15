@@ -1,7 +1,13 @@
+import { data } from 'react-router-dom';
 import { getResourcePath } from '../utils/pathUtils';
 
 export const homeData = {
   news: [
+    {
+      date: 'Jul 2025',
+      content: `We received the <a href="http://www.zcz-award.org.cn/index/shows?catid=6&id=39" target="_blank" rel="noopener noreferrer">ZCZ Award</a>, which honors teams and individuals who have made significant breakthroughs in fundamental research, cutting-edge technologies, and application innovations in artificial intelligence.`,
+      image: getResourcePath('/static/images/news/zcz.jpg'),
+    },
     {
       date: 'Jun 2025',
       content: `We've released the latest version of DPA-3, an advanced interatomic potential built on a message passing architecture. As a large atomistic model (LAM), DPA-3 is designed to integrate and train on datasets spanning multiple scientific disciplines, capturing a wide range of chemical and materials systems. DPA-3 placed second in the <a href="https://matbench-discovery.materialsproject.org/" target="_blank" rel="noopener noreferrer">Matbench Discovery Challenge</a>, outperformed only by a significantly larger model developed by Meta. Details can be found in our <a href="https://arxiv.org/abs/2506.01686" target="_blank" rel="noopener noreferrer">preprint</a>.`,
