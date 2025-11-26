@@ -8,6 +8,7 @@ import Home from './sections/Home';
 import Projects from './sections/Projects';
 import Blog from './sections/Blog';
 import ProjectPage from './sections/ProjectPage';
+import BlogPage from './sections/BlogPage';
 import GeometricBackground from './components/GeometricBackground';
 import './styles/App.css';
 
@@ -109,6 +110,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<MainLayoutWrapper />} />
         <Route path="/project/:id" element={<ProjectPage />} />
+        <Route path="/blog/:blogTitle" element={<BlogPage />} />
       </Routes>
     </Router>
   );
