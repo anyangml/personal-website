@@ -6,6 +6,9 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { Spin } from 'antd';
+import MermaidChart from './MermaidChart';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface MarkdownRendererProps {
   content?: string;
@@ -58,6 +61,38 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, filePath }
       <ReactMarkdown 
         remarkPlugins={[remarkGfm, remarkMath]}
         rehypePlugins={[rehypeRaw, rehypeKatex]}
+        components={{
+          code({ node, className, children, ...props }: any) {
+            const match = /language-(\w+)/.exec(className || '');
+            const language = match ? match[1] : '';
+            const inline = props.inline;
+            
+            if (!inline && language === 'mermaid') {
+              return (
+                <MermaidChart chart={String(children).replace(/\n$/, '')} />
+              );
+            }
+            
+            if (!inline && language) {
+              return (
+                <SyntaxHighlighter
+                  style={vscDarkPlus}
+                  language={language}
+                  PreTag="div"
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+              );
+            }
+            
+            return (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            );
+          },
+        }}
       >
         {markdown}
       </ReactMarkdown>
