@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { Layout, Tabs } from 'antd';
 import { HomeOutlined, AppstoreOutlined, BookOutlined } from '@ant-design/icons';
-import { getPublicPath } from './utils/pathUtils';
 import About from './sections/About';
 import Home from './sections/Home';
 import Projects from './sections/Projects';
@@ -103,10 +102,8 @@ const MainLayoutWrapper: React.FC = () => {
 };
 
 const App: React.FC = () => {
-  const basename = getPublicPath();
-  
   return (
-    <Router basename={basename}>
+    <Router>
       <Routes>
         <Route path="/" element={<MainLayoutWrapper />} />
         <Route path="/project/:id" element={<ProjectPage />} />
