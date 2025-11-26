@@ -14,8 +14,11 @@ const BlogPage: React.FC = () => {
   const [markdownContent, setMarkdownContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
 
+  // Remove .html extension if present
+  const cleanBlogTitle = blogTitle?.replace(/\.html$/, '');
+
   const blog = blogData.find(
-    p => p.title.replace(/\s+/g, '-').toLowerCase() === blogTitle
+    p => p.title.replace(/\s+/g, '-').toLowerCase() === cleanBlogTitle
   );
 
   useEffect(() => {

@@ -13,7 +13,11 @@ const { Content } = Layout;
 const ProjectPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const project = projectsData.find(p => p.title.replace(/\s+/g, '-').toLowerCase() === id);
+  
+  // Remove .html extension if present
+  const cleanId = id?.replace(/\.html$/, '');
+  
+  const project = projectsData.find(p => p.title.replace(/\s+/g, '-').toLowerCase() === cleanId);
 
   const handleBack = () => {
     // Navigate back to the main page with state indicating we're coming from a project page
