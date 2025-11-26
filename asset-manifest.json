@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-website/static/css/main.f1b4c2c7.css",
-    "main.js": "/personal-website/static/js/main.8904f09c.js",
+    "main.css": "/personal-website/static/css/main.599b1c9b.css",
+    "main.js": "/personal-website/static/js/main.e604deba.js",
     "static/media/KaTeX_AMS-Regular.ttf": "/personal-website/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "/personal-website/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/KaTeX_Main-Bold.ttf": "/personal-website/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
@@ -63,11 +63,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/personal-website/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/personal-website/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/personal-website/index.html",
-    "main.f1b4c2c7.css.map": "/personal-website/static/css/main.f1b4c2c7.css.map",
-    "main.8904f09c.js.map": "/personal-website/static/js/main.8904f09c.js.map"
+    "main.599b1c9b.css.map": "/personal-website/static/css/main.599b1c9b.css.map",
+    "main.e604deba.js.map": "/personal-website/static/js/main.e604deba.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1b4c2c7.css",
-    "static/js/main.8904f09c.js"
+    "static/css/main.599b1c9b.css",
+    "static/js/main.e604deba.js"
   ]
 }
