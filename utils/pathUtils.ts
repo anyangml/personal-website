@@ -5,14 +5,15 @@
 
 /**
  * Get the public path prefix for resources
- * On GitHub Pages, we need to add the /personal-website prefix
- * In local development environment, we can use relative paths
+ * derived from Vite's base configuration
  */
 export const getPublicPath = (): string => {
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    // Also support local testing at /personal-website
-    const isLocalPersonalWebsite = window.location.pathname.startsWith('/personal-website');
-    return isGitHubPages || isLocalPersonalWebsite ? '/personal-website' : '';
+    // import.meta.env.BASE_URL corresponds to the "base" option in vite.config.ts
+    // It defaults to "/" in dev if not set, or the specified path (e.g. "/personal-website/")
+    // We remove the trailing slash to consistently append it to paths starting with "/"
+    return import.meta.env.BASE_URL.endsWith('/')
+        ? import.meta.env.BASE_URL.slice(0, -1)
+        : import.meta.env.BASE_URL;
 };
 
 /**
@@ -25,7 +26,8 @@ export const getResourcePath = (path: string): string => {
         return path;
     }
     const prefix = getPublicPath();
-    // Avoid double prefix
+
+    // Avoid double prefix if the path already starts with the base
     if (prefix && path.startsWith(prefix + '/')) {
         return path;
     }
